@@ -3,10 +3,7 @@ const hre = require("hardhat");
 async function main() {
   const [deployer] = await hre.ethers.getSigners();
 
-  console.log(
-    "Deploying contracts with the account:",
-    deployer.address
-  );
+  console.log("Deploying contracts with the account:", deployer.address);
 
   const Greeter = await hre.ethers.getContractFactory("Greeter");
   const greeter = await Greeter.deploy("Hello, World!");
@@ -23,7 +20,7 @@ async function main() {
 
 main()
   .then(() => process.exit(0))
-  .catch(error => {
+  .catch((error) => {
     console.error(error);
     process.exit(1);
   });
